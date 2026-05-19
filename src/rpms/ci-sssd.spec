@@ -1,8 +1,6 @@
-%{!?build_timestamp:%global build_timestamp %(date +"%%Y_%%m_%%d_%%H_%%M_%%S")}
-
 Name:           ci-sssd
 Version:        1
-Release:        2%{?dist}.%{build_timestamp}
+Release:        %autorelease
 Summary:        SSSD CI Packages
 URL:            https://github.com/SSSD/sssd-ci-containers
 
@@ -38,8 +36,4 @@ random.so for passkey testing and sss_pac_responder_client.
 /opt/sss_pac_responder_client
 
 %changelog
-* Mon Oct 06 2023 SSSD Team <sssd-devel@lists.fedorahosted.org> - 1.0.0-2
-- sss_pac_responder_client added.
-
-* Thu Jul 20 2023 SSSD Team <sssd-devel@lists.fedorahosted.org> - 1.0.0-1
-- Test package release.
+%autochangelog
