@@ -1,6 +1,8 @@
+%global build_date %(date +"%%Y_%%m_%%d")
+
 Name:           ci-sssd
 Version:        1
-Release:        %autorelease -b 3
+Release:        %autorelease -b 3 -s %{build_date}
 Summary:        SSSD CI Packages
 URL:            https://github.com/SSSD/sssd-ci-containers
 
