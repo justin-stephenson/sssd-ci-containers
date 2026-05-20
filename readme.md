@@ -17,7 +17,7 @@ $ sudo podman exec -it client /bin/bash
 ```
 
 **Note:** once you get a console on the client container, you may want to bring
-SSSD online because it has been most probably started before the other services,
+SSSD online because it has been most probably started before other services,
 and therefore it went offline: `pkill --signal SIGUSR2 sssd`.
 
 ![sssd-ci-containers demo](misc/demo.gif)
