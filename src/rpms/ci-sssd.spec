@@ -1,6 +1,6 @@
 Name:           ci-sssd
 Version:        1
-Release:        %autorelease
+Release:        %autorelease -b 3
 Summary:        SSSD CI Packages
 URL:            https://github.com/SSSD/sssd-ci-containers
 
