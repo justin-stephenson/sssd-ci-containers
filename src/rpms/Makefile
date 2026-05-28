@@ -1,4 +1,4 @@
-GIT_VERSION = $(shell git describe 2>/dev/null | sed 's/-/_/g')
+GIT_VERSION = $(shell git describe | sed 's/-/_/g')
 
 ifneq ($(GIT_VERSION),)
 GIT_CHECKOUT := true
@@ -16,6 +16,8 @@ prep:
 	cp ci-sssd.spec $(PWD)/rpmbuild/SPECS
 
 srpm: prep
+$(info $$VERSION is [${VERSION}])
+$(info $$GIT_CHECKOUT is [${GIT_CHECKOUT}])
 ifdef GIT_CHECKOUT
 	sed -i "s/^Release:.*/Release: $(GIT_VERSION)/" ci-sssd.spec
 endif
