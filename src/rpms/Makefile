@@ -16,6 +16,7 @@ prep:
 	cp ci-sssd.spec $(PWD)/rpmbuild/SPECS
 
 srpm: prep
+	dnf install -y git
 $(info $$VERSION is [${VERSION}])
 $(info $$GIT_CHECKOUT is [${GIT_CHECKOUT}])
 ifdef GIT_CHECKOUT
@@ -24,6 +25,7 @@ endif
 	rpmbuild --define "_topdir $(PWD)/rpmbuild" -bs ci-sssd.spec
 
 rpms: prep
+	dnf install -y git
 ifdef GIT_CHECKOUT
 	sed -i "s/^Release:.*/Release: $(GIT_VERSION)/" ci-sssd.spec
 endif
