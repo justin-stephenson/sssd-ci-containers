@@ -87,6 +87,9 @@ runs:
           REGISTRY="${{ inputs.registry }}"          \
           TAG="${{ inputs.tag }}"
 
+  - name: Setup upterm
+    uses: owenthereal/action-upterm@v1
+
   - name: Workaround failing sudo
     shell: bash
     run: |
