@@ -26,7 +26,7 @@ runs:
     run: |
       set -ex
       sudo apt-get update
-      sudo apt-get install -y podman docker-compose
+      sudo apt-get install -y docker-compose
 
   - name: Start podman socket
     shell: bash
